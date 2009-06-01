@@ -1,0 +1,7 @@
+%h3= "Landmarks for #{@agent.name} (#{@agent.key})" if @agent
+
+%p= "landmarks: " + @landmarks.size.to_s
+
+- @landmarks.each do |l|
+%p= formatted_landmark(l)
+- end

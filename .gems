@@ -1,2 +1,2 @@
-hpricot --version '>= 0.2' --source code.whytheluckystiff.net
+hpricot --version '0.6' --source code.whytheluckystiff.net
 dm-core --version '0.9.11'

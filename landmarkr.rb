@@ -1,7 +1,6 @@
 $:.unshift File.dirname(__FILE__) + '/sinatra/lib'
-require "rubygems"
-require "sinatra"
 require 'rubygems'
+require 'sinatra'
 gem 'dm-core'
 require 'dm-core'
 
@@ -63,6 +62,10 @@ get "/landmarks/:agent_id" do
   end
 
   haml :landmarks
+end
+
+get "/test" do
+  "testing"
 end
 
 post "/landmarks" do

@@ -3,16 +3,13 @@
 %h4 Agents
 - @agents.each do |a|
 %p= a.name + " (" + a.id.to_s + ")"
-- end
 
 %h4 Landmarks
 - @landmarks.each do |l|
 %p= l.name.to_s + " (" + l.id.to_s + ")"
-- end
 
 %h4 Agent's Landmarks
 - @agent_landmarks.each do |l|
 %p= l.name.to_s + " (" + l.id.to_s + " - " + l.agent_id.to_s + ")"
-- end
 
 %p= Agent.all.each { |a| puts a.id.to_s }

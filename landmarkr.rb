@@ -3,6 +3,7 @@ require 'rubygems'
 require 'sinatra'
 gem 'dm-core'
 require 'dm-core'
+require 'Haml'
 
 
 # Configuration
@@ -65,7 +66,28 @@ get "/landmarks/:agent_id" do
 end
 
 get "/test" do
-  "testing"
+  builder do |xml|
+    xml.instruct! :xml, :version => '1.1'
+      
+    end
+
+    xml.instruct! :xml, :version => '1.1'
+    xml.person do
+      xml.name "Francis Albert Sinatra"
+      xml.aka "Frank Sinatra"
+      xml.aka "Ol' Blue Eyes"
+      xml.aka "The Chairman of the Board"
+      xml.born 'date' => '1915-12-12' do
+        xml.text! "Hoboken, New Jersey, U.S.A."
+      end
+      xml.died 'age' => 82
+    end
+  end
+end
+
+get "/test.xml" do
+  content_type 'text/html', :charset => 'utf-8'
+  ""
 end
 
 post "/landmarks" do
